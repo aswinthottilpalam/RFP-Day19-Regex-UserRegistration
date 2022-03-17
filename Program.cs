@@ -11,7 +11,7 @@ namespace REGEX_UserRegistration
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose an option to execute REGEX program: \n 1. Validate FirstName \n 2. Validate LastName \n 3. Validate Email \n 4. Validate Phone Number \n 5. Validate Password rule1 \n 6. Validate Password rule-2 \n 7. Validate Password rule-3 \n 8. Exit ");
+                Console.WriteLine("Choose an option to execute REGEX program: \n 1. Validate FirstName \n 2. Validate LastName \n 3. Validate Email \n 4. Validate Phone Number \n 5. Validate Password rule1 \n 6. Validate Password rule-2 \n 7. Validate Password rule-3 \n 8. Validate Password rule-4 \n 9. Exit ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -94,6 +94,17 @@ namespace REGEX_UserRegistration
                             Console.WriteLine("Invalid Password");
                         break;
                     case 8:
+                        Console.WriteLine("Enter Password: ");
+                        string Name7 = Console.ReadLine();
+                        UC8PasswordRule4 PasswordRule4 = new UC8PasswordRule4();
+
+                        bool value8 = PasswordRule4.validatePassword(Name7);
+                        if (value8)
+                            Console.WriteLine("Valid Password");
+                        else
+                            Console.WriteLine("Invalid Password");
+                        break;
+                    case 9:
                         flag = false;
                         break;
                 }
