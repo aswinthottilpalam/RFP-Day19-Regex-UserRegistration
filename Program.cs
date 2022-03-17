@@ -11,7 +11,7 @@ namespace REGEX_UserRegistration
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose an option to execute REGEX program: \n 1. Validate FirstName \n 2. Validate LastName \n 3. Validate Email \n 4. Validate Phone Number \n 5. Validate Password \n 6. Exit ");
+                Console.WriteLine("Choose an option to execute REGEX program: \n 1. Validate FirstName \n 2. Validate LastName \n 3. Validate Email \n 4. Validate Phone Number \n 5. Validate Password rule1 \n 6. Validate Password rule2 \n 7. Exit ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -72,6 +72,17 @@ namespace REGEX_UserRegistration
                             Console.WriteLine("(Password must contain 8 charectors)");
                         break;
                     case 6:
+                        Console.WriteLine("Enter Password: ");
+                        string Name5 = Console.ReadLine();
+                        UC6PasswordRule2 PasswordRule2 = new UC6PasswordRule2();
+
+                        bool value6 = PasswordRule2.validatePassword(Name5);
+                        if (value6)
+                            Console.WriteLine("Valid Password");
+                        else
+                            Console.WriteLine("Invalid Password");
+                        break;
+                    case 7:
                         flag = false;
                         break;
                 }
