@@ -11,7 +11,7 @@ namespace REGEX_UserRegistration
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose an option to execute REGEX program: \n 1. Validate FirstName \n 2. Validate LastName \n 3. Exit ");
+                Console.WriteLine("Choose an option to execute REGEX program: \n 1. Validate FirstName \n 2. Validate LastName \n 3. Validate Email \n 4. Exit ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -38,6 +38,17 @@ namespace REGEX_UserRegistration
                             Console.WriteLine("Invalid Name");
                         break;
                     case 3:
+                        Console.WriteLine("Enter Email: ");
+                        string Name2 = Console.ReadLine();
+                        UC3EnterEmail EnterEmail = new UC3EnterEmail();
+
+                        bool value3 = EnterEmail.validateEmail(Name2);
+                        if (value3)
+                            Console.WriteLine("Valid Email");
+                        else
+                            Console.WriteLine("Invalid Email");
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
