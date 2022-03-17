@@ -11,7 +11,7 @@ namespace REGEX_UserRegistration
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose an option to execute REGEX program: \n 1. Validate FirstName \n 2. Validate LastName \n 3. Validate Email \n 4. Exit ");
+                Console.WriteLine("Choose an option to execute REGEX program: \n 1. Validate FirstName \n 2. Validate LastName \n 3. Validate Email \n 4. Validate Phone Number \n 5. Exit ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -49,6 +49,17 @@ namespace REGEX_UserRegistration
                             Console.WriteLine("Invalid Email");
                         break;
                     case 4:
+                        Console.WriteLine("Enter Phone Number (add +91 before your No): ");
+                        string Name3 = Console.ReadLine();
+                        UC4EneterPhoneNumber EneterPhoneNumber = new UC4EneterPhoneNumber();
+
+                        bool value4 = EneterPhoneNumber.validatePhoneNumber(Name3);
+                        if (value4)
+                            Console.WriteLine("Valid Phone number");
+                        else
+                            Console.WriteLine("Invalid Phone Number");
+                        break;
+                    case 5:
                         flag = false;
                         break;
                 }
